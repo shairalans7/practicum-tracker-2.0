@@ -20,3 +20,7 @@ PracticumFlow interface served by GitHub Pages and connected to Firebase Authent
 The app uses `assets/firebase-bootstrap.js` to connect the PracticumFlow interface to Firebase. The project alias is set in `.firebaserc`; publish rules with `firebase deploy --only firestore:rules`.
 
 GitHub Actions deploys this site from `main`.
+
+## User and developer guide
+
+For instructions on using the tracker, running it on another laptop, configuring Firebase, and publishing updates, see [GABAY-SA-PRACTICUMFLOW.md](GABAY-SA-PRACTICUMFLOW.md).
