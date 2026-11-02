@@ -7,6 +7,7 @@ import {
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signOut,
+  updatePassword,
   updateProfile
 } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js";
 import {
@@ -56,6 +57,7 @@ export {
   signOut,
   Timestamp,
   updateDoc,
+  updatePassword,
   updateProfile,
   where
 };

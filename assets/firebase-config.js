@@ -1,5 +1,5 @@
-﻿export const firebaseConfig = {
-  apiKey: "AIzaSyDQpTHydaOCmHDk-lafVnWN5UTRqusWjIw",
+export const firebaseConfig = {
+  apiKey: "AIzaSyDQpTHydaOCmHDk-lafVnWN5UTRqusWJiw",
   authDomain: "practicum2-c2164.firebaseapp.com",
   projectId: "practicum2-c2164",
   storageBucket: "practicum2-c2164.firebasestorage.app",
