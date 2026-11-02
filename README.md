@@ -1,11 +1,29 @@
-﻿# PracticumFlow UI
+﻿# PracticumFlow
 
-A static GitHub Pages copy of the PracticumFlow interface, based on the live PracticumFlow build. The bundled UI and styles are kept as delivered by the reference site.
+Practicum tracker deployed on GitHub Pages and connected to Firebase Authentication and Cloud Firestore.
 
-## Publish
+## Features
 
-The `Deploy to GitHub Pages` workflow publishes the site from the `main` branch. Enable GitHub Pages with **Build and deployment → GitHub Actions** in the repository settings if it has not been enabled yet.
+- Email/password accounts, email verification, sign-in, and password reset
+- Clock-in and clock-out shifts saved to Firestore
+- Activity entries with categories, duration calculations, search, filters, editing, and deletion
+- Competency totals and charts
+- Date-range reports, CSV download, and print/PDF output
+- Profile and practicum settings
 
-## Backend
+## Firebase project
 
-GitHub Pages only serves static files. The reference app sends account and practicum record requests to its Netlify `/api/tracker` endpoint; those backend requests are not hosted by GitHub Pages. The interface can be viewed there, but data and sign-in features require a backend endpoint configured for this deployment.
+The browser configuration currently points to `practicum-tracker-de9e7`, the Firebase project already configured in this backup. To use a separate database for this version, replace `assets/firebase-config.js` and `.firebaserc` with the values from the new Firebase project.
+
+Before using the site, ensure the Firebase project has:
+
+1. Email/Password enabled in Authentication.
+2. Cloud Firestore created.
+3. The rules in `firestore.rules` published.
+4. `shairalans7.github.io` listed under Authentication → Settings → Authorized domains.
+
+Publish the rules with the Firebase CLI by running `firebase deploy --only firestore:rules` from this repository after signing in to the intended Firebase project.
+
+## GitHub Pages
+
+A GitHub Actions workflow publishes the static pages on each push to `main`. Open `login.html` to create an account or sign in.
