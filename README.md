@@ -1,19 +1,21 @@
 ﻿# PracticumFlow
 
-Practicum tracker deployed on GitHub Pages. Authentication and records use Firebase Authentication and Cloud Firestore once connected to a dedicated Firebase project.
+Practicum tracker deployed on GitHub Pages. Firebase project for this version: `practicum2-c2164`.
 
-## Connect a separate Firebase project
+## Connect Firebase
 
-1. Create a new Firebase project for this version and add a Web App.
-2. Enable Email/Password under Authentication sign-in providers.
-3. Create a Cloud Firestore database.
-4. Copy that Web App configuration into `assets/firebase-config.js`.
-5. Publish `firestore.rules` to the new project.
-6. Add `shairalans7.github.io` to Authentication authorized domains.
+The Firebase Web App configuration for `practicum2-c2164` is still needed in `assets/firebase-config.js`. In Firebase Console, open Project settings → General → Your apps, register a Web App if needed, then copy its complete `firebaseConfig` object into that file.
 
-Do not use the Firebase project from the other practicum tracker version. No Firebase project is selected in this repository.
+Then ensure the project has:
 
-To publish rules with the Firebase CLI after selecting the new project, run `firebase deploy --only firestore:rules --project YOUR_PROJECT_ID`.
+1. Email/Password enabled in Authentication.
+2. Cloud Firestore created.
+3. The rules in `firestore.rules` published.
+4. `shairalans7.github.io` listed under Authentication authorized domains.
+
+The Firebase CLI default project is set to `practicum2-c2164`. Publish the rules with `firebase deploy --only firestore:rules` after signing in to that Firebase project.
+
+Do not add a service-account key or private key to this repository.
 
 ## Features
 
