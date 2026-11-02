@@ -14,7 +14,7 @@ function setTheme(theme) {
   const isDark = theme === "dark";
   toggle.setAttribute("aria-pressed", String(isDark));
   toggle.setAttribute("aria-label", `Switch to ${isDark ? "light" : "dark"} mode`);
-  icon.textContent = isDark ? "☀" : "☾";
+  icon.textContent = isDark ? "\u2600" : "\u263e";
   label.textContent = isDark ? "Light mode" : "Dark mode";
 
   try {

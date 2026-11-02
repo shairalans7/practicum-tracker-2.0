@@ -12,19 +12,20 @@ Ang dokumentong ito ay gabay sa paggamit ng PracticumFlow, pagpapatakbo nito sa 
 
 - **GitHub Pages** ang nagho-host ng website files.
 - **Firebase Authentication** ang namamahala sa accounts, email verification, at password reset.
-- **Cloud Firestore** ang nag-iimbak ng profiles, shift records, at activity logs.
+- **Cloud Firestore** ang nag-iimbak ng profiles, shift records, at activity logs sa live website.
+- **Browser localStorage** ang database sa `localhost` demo mode. Walang Firebase o internet na kailangan para sa local mode.
 - **Firestore Rules** ang naglilimita sa bawat user sa sarili niyang data.
 - **Light/dark mode** preference ay sine-save sa browser na ginagamit mo. Hindi ito Firebase data.
 
-Gumagamit ang live website at ang localhost version ng iisang Firebase project. Kapag nag-login ka sa parehong account sa dalawang device, pareho mong makikita ang cloud data.
+Ang live website ay gumagamit ng Firebase cloud data. Ang `localhost` demo mode ay hiwalay at nagse-save sa browser storage lang. Hindi pareho ang local account at live Firebase account, at hindi awtomatikong nagsi-sync ang local records sa cloud.
 
 ## Paggamit ng website
 
 ### Gumawa at mag-verify ng account
 
-1. Buksan ang live website at piliin ang paggawa ng account.
+1. Buksan ang live website at piliin ang paggawa ng account. Sa localhost, gagawa ito ng hiwalay na local demo account.
 2. Ilagay ang pangalan, email address, at password.
-3. Buksan ang verification email at pindutin ang link. Kung wala sa Inbox, tingnan ang Spam, Promotions, at All Mail.
+3. Sa live website, buksan ang verification email at pindutin ang link. Kung wala sa Inbox, tingnan ang Spam, Promotions, at All Mail. Walang email verification sa local demo mode.
 4. Bumalik sa website at mag-sign in. Kung hindi pa verified ang account, susubukan ng app na magpadala ulit ng verification link.
 
 Kung may error, kopyahin ang mismong mensahe. Huwag ibahagi ang password mo.
@@ -73,15 +74,17 @@ Kung hindi gumana ang `py`, subukan:
 python -m http.server 8000
 ```
 
-Buksan ang <http://localhost:8000/> sa browser. Huwag buksan ang `index.html` sa pamamagitan ng pag-double-click; kailangan ang `http://` local server para gumana nang tama ang JavaScript modules.
+Buksan ang <http://localhost:8000/> sa browser. Huwag buksan ang `index.html` sa pamamagitan ng pag-double-click; kailangan ang `http://` local server para gumana nang tama ang JavaScript modules. Hindi kailangan ang `npm install` para patakbuhin ang demo.
 
 Iwanang bukas ang PowerShell habang ginagamit ang website. Pindutin ang **Ctrl + C** sa PowerShell para ihinto ang server.
 
-### Payagan ang localhost sa Firebase
+### Gumamit ng localStorage mode
 
-Sa Firebase Console ng `practicum2-c2164`, pumunta sa **Authentication → Settings → Authorized domains**. Idagdag ang `localhost` kung wala pa ito sa listahan. Isulat lang ang `localhost`, walang `http://` o port number.
+Kapag ang site ay binuksan sa `http://localhost:8000/` o `http://127.0.0.1:8000/`, awtomatikong localStorage ang backend. Hindi kailangan idagdag ang `localhost` sa Firebase Authorized Domains para sa mode na ito.
 
-Ang localhost app ay gagamit pa rin ng live Firebase project. Ang accounts at records na gawin habang sumusubok ay mase-save sa parehong cloud database.
+Gumawa ng local demo account sa unang pagbukas; hindi gagana rito ang Firebase account mo. Gumamit ng demo password, hindi password ng Firebase account mo. Naka-save ang account at records sa browser na iyon. Gamitin ang parehong browser at address para makita ulit ang records. Kapag binura ang browser site data, mabubura rin ang local demo data. Hindi gumagana ang pagpapadala ng password reset email sa local-only mode.
+
+Para makita ang cloud account at cloud records, gamitin ang live GitHub Pages website habang may internet.
 
 ## Firebase setup at rules
 
@@ -89,7 +92,7 @@ Sa Firebase Console, kumpirmahing:
 
 1. Naka-enable ang **Email/Password** sa **Authentication → Sign-in method**.
 2. May Firestore database ang project.
-3. Kasama sa **Authentication → Settings → Authorized domains** ang `shairalans7.github.io`; idagdag din ang `localhost` para sa local development.
+3. Kasama sa **Authentication → Settings → Authorized domains** ang `shairalans7.github.io` para sa live website. Hindi ginagamit ang Firebase Auth sa localhost demo mode.
 4. Nailathala sa **Firestore Database → Rules** ang laman ng [firestore.rules](firestore.rules).
 
 > Hiwalay ang pag-publish ng Firestore Rules sa pag-deploy ng website. Kapag binago ang `firestore.rules`, kailangang i-publish muli ito sa Firebase Console. Hindi ito ginagawa ng GitHub Pages workflow.
@@ -117,7 +120,9 @@ git pull origin main
 - `index.html` at `login.html` — entry pages ng app.
 - `assets/firebase-config.js` — Firebase web app configuration.
 - `assets/firebase.js` — nag-i-initialize ng Firebase Authentication at Firestore.
-- `assets/firebase-bootstrap.js` — nag-uugnay ng UI sa Firebase operations.
+- `assets/firebase-bootstrap.js` — pumipili ng local o Firebase backend ayon sa hostname.
+- `assets/local-storage-backend.js` — local demo accounts at records para sa localhost.
+- `assets/firebase-online.js` — Firebase Authentication at Firestore operations para sa live site.
 - `assets/theme.js` at `assets/theme.css` — light/dark mode at itsura nito.
 - `assets/index-B_b0rHmn.js` at `assets/index--yB6-8HE.css` — compiled UI assets.
 - `firestore.rules` — mga patakaran sa pagbasa at pagsulat ng Firestore data.

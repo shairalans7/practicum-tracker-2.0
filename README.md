@@ -1,6 +1,8 @@
 ﻿# PracticumFlow Version 2
 
-PracticumFlow interface served by GitHub Pages and connected to Firebase Authentication and Cloud Firestore. The Firebase project is `practicum2-c2164`.
+PracticumFlow Version 2 runs in two modes: the published GitHub Pages site uses Firebase Authentication and Cloud Firestore, while `localhost` uses browser localStorage for an offline demo. The Firebase project is `practicum2-c2164`.
+
+The localhost demo uses a separate local account and separate local records. It does not require internet and does not sync its data with Firebase.
 
 ## Features
 
@@ -17,7 +19,7 @@ PracticumFlow interface served by GitHub Pages and connected to Firebase Authent
 3. Publish `firestore.rules` to project `practicum2-c2164`.
 4. Add `shairalans7.github.io` to Authentication authorized domains.
 
-The app uses `assets/firebase-bootstrap.js` to connect the PracticumFlow interface to Firebase. The project alias is set in `.firebaserc`; publish rules with `firebase deploy --only firestore:rules`.
+The app uses `assets/firebase-bootstrap.js` to select the localStorage backend on `localhost` or the Firebase backend on the published site. The project alias is set in `.firebaserc`; publish rules with `firebase deploy --only firestore:rules`.
 
 GitHub Actions deploys this site from `main`.
 
