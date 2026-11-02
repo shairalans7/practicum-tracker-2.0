@@ -159,6 +159,18 @@
   color: #c1d4df;
 }
 
+:root[data-theme="dark"] .donut > div {
+  background: #1b2731;
+}
+
+:root[data-theme="dark"] .donut strong {
+  color: #f1f5f7;
+}
+
+:root[data-theme="dark"] .donut span {
+  color: #aebdc7;
+}
+
 :root[data-theme="dark"] .count {
   color: #bcc8d1;
 }
