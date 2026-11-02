@@ -216,8 +216,13 @@ globalThis.practicumFirebase = {
   async signIn(email, password) {
     const result = await signInWithEmailAndPassword(auth, email, password);
     if (!result.user.emailVerified) {
-      await sendEmailVerification(result.user, actionSettings).catch(() => {});
-      await signOut(auth);
+      try {
+        await sendEmailVerification(result.user, actionSettings);
+      } catch (error) {
+        await signOut(auth).catch(() => {});
+        throw new Error(`Email isn't verified, and Firebase couldn't resend the verification link: ${error.message || error}`);
+      }
+      await signOut(auth).catch(() => {});
       throw new Error("Verify your email first. A verification link has been sent.");
     }
     return identityUser(result.user);
