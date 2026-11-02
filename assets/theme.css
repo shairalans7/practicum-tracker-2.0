@@ -1,0 +1,269 @@
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  color: #e8eef3;
+  background: #111920;
+  --navy: #315c50;
+  --muted: #a8b7c2;
+  --line: #33424d;
+  --green: #a8dbc2;
+}
+
+:root[data-theme="dark"] body,
+:root[data-theme="dark"] .app {
+  color: #e8eef3;
+  background: #111920;
+}
+
+:root[data-theme="dark"] .sidebar,
+:root[data-theme="dark"] .sidebar nav,
+:root[data-theme="dark"] header {
+  background: #18232c;
+  border-color: #2d3b46;
+}
+
+:root[data-theme="dark"] header {
+  background: #18232ceF;
+}
+
+:root[data-theme="dark"] .brand small,
+:root[data-theme="dark"] .nav-label,
+:root[data-theme="dark"] .breadcrumb,
+:root[data-theme="dark"] .header-date,
+:root[data-theme="dark"] .eyebrow,
+:root[data-theme="dark"] .page-heading p,
+:root[data-theme="dark"] .section-head p,
+:root[data-theme="dark"] .progress-detail > span,
+:root[data-theme="dark"] .metric > p,
+:root[data-theme="dark"] .empty,
+:root[data-theme="dark"] .workspace-footer,
+:root[data-theme="dark"] .muted,
+:root[data-theme="dark"] .notes,
+:root[data-theme="dark"] .report-label,
+:root[data-theme="dark"] .report-entry small,
+:root[data-theme="dark"] .modal-sub,
+:root[data-theme="dark"] .form-note,
+:root[data-theme="dark"] .auth-switch {
+  color: #9cabb6;
+}
+
+:root[data-theme="dark"] .breadcrumb b,
+:root[data-theme="dark"] td b,
+:root[data-theme="dark"] .empty h3,
+:root[data-theme="dark"] .report-notes,
+:root[data-theme="dark"] .report-preview > h2 {
+  color: #e0e8ee;
+}
+
+:root[data-theme="dark"] nav button {
+  color: #b1bec8;
+}
+
+:root[data-theme="dark"] nav button.active {
+  color: #e0eee8;
+  background: #293c46;
+}
+
+:root[data-theme="dark"] nav button:hover,
+:root[data-theme="dark"] .secondary,
+:root[data-theme="dark"] .count {
+  background: #25323c;
+}
+
+:root[data-theme="dark"] .journey {
+  background: #202e35;
+  border-color: #34454b;
+}
+
+:root[data-theme="dark"] .journey p,
+:root[data-theme="dark"] .settings-link,
+:root[data-theme="dark"] .profile small,
+:root[data-theme="dark"] .profile button {
+  color: #a1b0b7;
+}
+
+:root[data-theme="dark"] .profile,
+:root[data-theme="dark"] .skill,
+:root[data-theme="dark"] th,
+:root[data-theme="dark"] td,
+:root[data-theme="dark"] .report-entry,
+:root[data-theme="dark"] .card-footer,
+:root[data-theme="dark"] .progress-footer {
+  border-color: #33414b;
+}
+
+:root[data-theme="dark"] .avatar,
+:root[data-theme="dark"] .brand-icon {
+  background: #294239;
+  color: #c5ead7;
+}
+
+:root[data-theme="dark"] .card,
+:root[data-theme="dark"] .metric,
+:root[data-theme="dark"] .report-preview {
+  background: #1b2731;
+  border-color: #2e3c47;
+  box-shadow: 0 3px 12px #00000018;
+}
+
+:root[data-theme="dark"] .secondary {
+  color: #dce5eb;
+  border-color: #3a4954;
+}
+
+:root[data-theme="dark"] .button.primary {
+  background: #3d7663;
+  color: #fff;
+}
+
+:root[data-theme="dark"] .button.primary:hover {
+  background: #4a8973;
+}
+
+:root[data-theme="dark"] .progress-track {
+  background: #2c3942;
+}
+
+:root[data-theme="dark"] .progress-footer,
+:root[data-theme="dark"] .card-footer {
+  color: #a5b2bc;
+}
+
+:root[data-theme="dark"] .blue {
+  background: #263a4b;
+  color: #9bc5e3;
+}
+
+:root[data-theme="dark"] .green {
+  background: #263d35;
+  color: #a7d8ba;
+}
+
+:root[data-theme="dark"] .amber {
+  background: #433a2a;
+  color: #e7c784;
+}
+
+:root[data-theme="dark"] .purple {
+  background: #392f46;
+  color: #c3b0e1;
+}
+
+:root[data-theme="dark"] .empty-icon {
+  background: #222f39;
+  border-color: #364550;
+  color: #a1b3bf;
+}
+
+:root[data-theme="dark"] .tag {
+  background: color-mix(in srgb, var(--tag, #799eb8) 22%, #1b2731);
+  color: #c1d4df;
+}
+
+:root[data-theme="dark"] .count {
+  color: #bcc8d1;
+}
+
+:root[data-theme="dark"] th {
+  color: #a8b7c2;
+}
+
+:root[data-theme="dark"] td {
+  color: #c0ccd4;
+}
+
+:root[data-theme="dark"] .report-preview > p,
+:root[data-theme="dark"] .report-entry p,
+:root[data-theme="dark"] .skill p,
+:root[data-theme="dark"] .skill small,
+:root[data-theme="dark"] .legend span,
+:root[data-theme="dark"] .legend b {
+  color: #aebdc7;
+}
+
+:root[data-theme="dark"] dialog {
+  color: #e8eef3;
+  background: #1a2630;
+  border-color: #394853;
+}
+
+:root[data-theme="dark"] .auth-modal {
+  background: linear-gradient(160deg, #202f35 0, #1a2630 48%);
+}
+
+:root[data-theme="dark"] form label {
+  color: #cad5dc;
+}
+
+:root[data-theme="dark"] input,
+:root[data-theme="dark"] select,
+:root[data-theme="dark"] textarea {
+  color: #e5edf2;
+  background: #121b22;
+  border-color: #3a4954;
+}
+
+:root[data-theme="dark"] input::placeholder,
+:root[data-theme="dark"] textarea::placeholder {
+  color: #84949f;
+}
+
+:root[data-theme="dark"] .alert.error {
+  color: #ffc4b8;
+  background: #482d2b;
+}
+
+:root[data-theme="dark"] .alert.success {
+  color: #b9e2c8;
+  background: #263c32;
+}
+
+:root[data-theme="dark"] .forgot,
+:root[data-theme="dark"] .auth-switch button,
+:root[data-theme="dark"] .text-button {
+  color: #a9d1bc;
+}
+
+.theme-toggle {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 20;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 42px;
+  padding: 0 15px;
+  color: #f5f8fa;
+  background: #193b57;
+  border: 1px solid #ffffff25;
+  border-radius: 999px;
+  box-shadow: 0 5px 18px #17344d30;
+  font-size: 12px;
+  font-weight: 650;
+  transition: transform .18s, background .18s, box-shadow .18s;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px #17344d40;
+}
+
+.theme-toggle-icon {
+  font-size: 17px;
+  line-height: 1;
+}
+
+:root[data-theme="dark"] .theme-toggle {
+  color: #18251f;
+  background: #c4e9d6;
+  border-color: #ffffff50;
+}
+
+@media (max-width: 680px) {
+  .theme-toggle {
+    right: 14px;
+    bottom: 78px;
+    min-height: 39px;
+    padding: 0 13px;
+  }
+}

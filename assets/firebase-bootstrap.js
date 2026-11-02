@@ -249,4 +249,5 @@ window.fetch = (input, init) => {
   return nativeFetch(input, init);
 };
 
+await import("./theme.js");
 await import("./index-B_b0rHmn.js");
